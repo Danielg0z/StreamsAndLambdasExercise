@@ -13,9 +13,15 @@ public class App {
 
         // 1. Print names in all uppercase
         System.out.println("=== Names in UPPERCASE ===");
-        for (Character c : characters) {
-            System.out.println(c.getName().toUpperCase());
-        }
+//        for (Character c : characters) {
+//            System.out.println(c.getName().toUpperCase());
+//        }
+
+        //take data in rest and puts it in transit,
+        // then converts every c
+        characters.stream()
+                        .map(character -> character.getName().toUpperCase())
+                        .forEach(name -> System.out.println(name));
 
         // 2. Filter characters with mass > 80
         System.out.println("\n=== Characters with Mass > 80 ===");
